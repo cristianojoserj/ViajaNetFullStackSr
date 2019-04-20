@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ViajaNetFullStackSr.Domain\ViajaNetFullStackSr.Domain.csproj" />
+    <ProjectReference Include="..\ViajaNetFullStackSr.Infra\ViajaNetFullStackSr.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

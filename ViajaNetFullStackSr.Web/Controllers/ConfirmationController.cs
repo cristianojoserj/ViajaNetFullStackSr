@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ViajaNetFullStackSr.Web.Controllers
+{
+    public class ConfirmationController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}

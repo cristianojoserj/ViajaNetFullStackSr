@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Faça seu pedido!</h1>
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="example-text-input" class="col-2 col-form-label">Endereço:</label>
+                    <div class="col-10">
+                        <input id="pedidoEndereco" class="form-control" type="text" value="Rua a" id="example-text-input">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="example-text-input" class="col-2 col-form-label">Telefone:</label>
+                    <div class="col-10">
+                        <input id="pedidoTelefone" class="form-control" type="text" value="21-99191-4879" id="example-text-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col-10">
+                    <label for="sel1">Quantidade de pessoas:</label>
+                    <select class="form-control" id="pedidoQuantidade">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="example-time-input" class="col-2 col-form-label">Hora</label>
+                    <div class="col-8">
+                        <input id="pedidoHora" class="form-control" type="time" value="12:00:00" id="example-time-input">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="example-time-input" class="col-2 col-form-label">&nbsp;</label>
+                    <div class="col-10">
+                        <button id="efetuarPedido" type="button" class="btn btn-outline-warning">Efetuar Pedido!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="example-time-input" class="col-2 col-form-label">&nbsp;</label>
+                    <div class="col-10">
+                        <button type="button" class="btn btn-outline-danger" onclick="javascript:history.back()">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        logAccess();
+
+        $('#efetuarPedido').click(function () {
+            window.location = '/Confirmation/Index?end=' +
+                $("#pedidoEndereco").val() +
+                "&tel=" +
+                $("#pedidoTelefone").val() +
+                "&qtd=" +
+                document.getElementById("pedidoQuantidade").selectedIndex +
+                "&hora=" +
+                $("#pedidoHora").val() +
+                "&idPasseo" +
+                window.location.href.split('?')[1].split('&');
+        })
+    });
+</script>
